@@ -1,5 +1,6 @@
 package com.developersbreach.androidbootcamp
 
+import android.content.Intent
 import android.graphics.Typeface
 import android.os.Bundle
 import android.widget.TextView
@@ -22,6 +23,18 @@ class IndiaActivity: AppCompatActivity() {
 
         popularTextView.setOnClickListener {
             handleHighlights(popularTextView, albumTextView, booleanTrackedValue)
+        }
+
+        val accountMenuText: TextView = findViewById(R.id.account_menu_text)
+        accountMenuText.setOnClickListener {
+
+            //val username = "Raj"
+            //val email = "raj@gmail.com"
+
+            val intent = Intent(applicationContext, AccountActivity::class.java)
+            //intent.putExtra("This contains name of the user", username)
+            //intent.putExtra("This contains email of the user", email)
+            startActivity(intent)
         }
     }
 
